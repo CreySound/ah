@@ -1,7 +1,7 @@
 local f3x = {}
 function f3x:getf3x()
 	if not game.Players.LocalPlayer:WaitForChild("Backpack"):FindFirstChild("Folder") then
-		ahfuncs:runcmd(":f3x")
+		game.Players:Chat(":f3x")
 	end
 	local folder = game.Players.LocalPlayer:WaitForChild("Backpack"):WaitForChild("Folder")
 	return folder:WaitForChild("SyncAPI"):WaitForChild("ServerEndpoint")
@@ -57,7 +57,7 @@ function f3x:maketext(text, pos : Vector3)
 			table.insert(cloneparts, v)
 		end
 	end
-	ahfuncs:runcmd(":unlock|:dname me "..text)
+	game.Players:Chat(":unlock|:dname me "..text)
 	repeat
 		wait()
 	until char.Head.Locked == false and char.Humanoid.DisplayName ~= ogdisp
@@ -78,7 +78,7 @@ function f3x:maketext(text, pos : Vector3)
 		task.wait()
 	end
 	char.Name = ogname
-	ahfuncs:runcmd(":undname me|:lock me")
+	game.Players:Chat(":undname me|:lock me")
 	wait(.5)
 	return replicatechar
 end
